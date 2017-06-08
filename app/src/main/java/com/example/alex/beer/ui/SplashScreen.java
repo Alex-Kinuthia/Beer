@@ -1,8 +1,10 @@
-package com.example.alex.beer;
+package com.example.alex.beer.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.alex.beer.R;
 
 /**
  * Created by alex on 6/2/17.

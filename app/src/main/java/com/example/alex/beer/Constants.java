@@ -6,6 +6,6 @@ package com.example.alex.beer;
 
 public class Constants {
     public static final String BEER_API_KEY = BuildConfig.BEER_API_KEY;
-    public static final String BEER_BASE_URL = "http://api.brewerydb.com/v2/categories?key=";
+    public static final String BEER_BASE_URL = "http://api.brewerydb.com/v2/beers?key=";
     public static final String BEER_QUERY_PARAMETER = "beer";
 }

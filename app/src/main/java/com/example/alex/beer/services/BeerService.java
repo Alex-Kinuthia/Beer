@@ -1,5 +1,8 @@
-package com.example.alex.beer;
+package com.example.alex.beer.services;
 
+
+import com.example.alex.beer.models.Beer;
+import com.example.alex.beer.Constants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,10 +17,6 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer;
-import se.akerfeldt.okhttp.signpost.SigningInterceptor;
-
-import static android.R.attr.rating;
 
 
 /**
@@ -60,17 +59,19 @@ public class BeerService {
                 JSONObject beerJSON = new JSONObject(jsonData);
                 JSONArray dataJSON = beerJSON.getJSONArray("data");
                 for (int i = 0; i < dataJSON.length(); i++) {
-                    JSONObject breweryJSON = dataJSON.getJSONObject(i);
-                    String id = breweryJSON.getString("id");
-                    String name = breweryJSON.getString("name");
-                    String description = breweryJSON.getJSONObject("styles").getString("description");
-                    String abv = breweryJSON.getString("abv");
-                    String styleId = breweryJSON.getString("styleId");
-                    String isOrganic = breweryJSON.getString("isOrganic");
-                    String status = breweryJSON.getString("status");
+                    JSONObject brewaryJSON = dataJSON.getJSONObject(i);
+                    String id = brewaryJSON.getString("id");
+                    String name = brewaryJSON.getString("name");
+                    String description = brewaryJSON.getJSONObject("style").getString("description");
+                    String abv = brewaryJSON.getString("abv");
+                    String styleId = brewaryJSON.getString("styleId");
+                    String isOrganic = brewaryJSON.getString("isOrganic");
+                    String status = brewaryJSON.getString("status");
+                    String label = brewaryJSON.optJSONObject("labels").optString("large");
+                    String updateDate =brewaryJSON.optJSONObject("updateDate").toString();
+                    String createDate =brewaryJSON.optJSONObject("createDate").toString();
 
-                    Beer beer = new Beer(id, name, description, abv, styleId,
-                            isOrganic, status);
+                    Beer beer = new Beer(id, name, abv, styleId, isOrganic, status, description, label, createDate, updateDate);
                     beers.add(beer);
                 }
             }
