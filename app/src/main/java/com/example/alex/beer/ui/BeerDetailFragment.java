@@ -10,6 +10,6 @@ public class BeerDetailFragment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beer_detail_fragment);
+        setContentView(R.layout.activity_beer_detail);
     }
 }

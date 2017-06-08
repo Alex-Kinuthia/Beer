@@ -52,11 +52,7 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
         @Bind(R.id.beerLabelTextView) TextView mLabelTextView;
         @Bind(R.id.beerAbvTextView) TextView mAbvTextView;
         @Bind(R.id.beerStyleIdTextView) TextView mStyleIdTextView;
-        @Bind(R.id.beerIsOrganicTextView) TextView mIsOrganicTextView;
-        @Bind(R.id.beerStatusTextView) TextView mStatusTextView;
-        @Bind(R.id.beerDescriptionTextView) TextView mDescriptionTextView;
-        @Bind(R.id.beerCreateDateTextView) TextView mCreateDateTextView;
-        @Bind(R.id.beerUpdateDateTextView) TextView mUpdateDateTextView;
+
 
 
         private Context mContext;
@@ -73,11 +69,7 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
             mLabelTextView.setText(beer.getLabel());
             mAbvTextView.setText(beer.getAbv());
             mStyleIdTextView.setText(beer.getStyleId());
-            mIsOrganicTextView.setText(beer.getIsOrganic());
-            mStatusTextView.setText(beer.getStatus());
-            mDescriptionTextView.setText(beer.getDescription());
-            mCreateDateTextView.setText(beer.getCreateDate());
-            mUpdateDateTextView.setText(beer.getUpdateDate());
+
 
 
 

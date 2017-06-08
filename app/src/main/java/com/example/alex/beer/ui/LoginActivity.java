@@ -13,10 +13,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
-    @Bind(R.id.btn_login)
+    @Bind(R.id.passwordLoginButton)
     Button mLogin;
-    @Bind(R.id.Name)
-    EditText mName;
+    @Bind(R.id.emailEditText)
+    EditText mEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, BeersActivity.class);
+                Intent intent = new Intent(LoginActivity.this, BeerListActivity.class);
                 startActivity(intent);
             }
         });

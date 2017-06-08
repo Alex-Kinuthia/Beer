@@ -10,6 +10,6 @@ public class BeerListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beer_list);
+        setContentView(R.layout.beer_list_item);
     }
 }
