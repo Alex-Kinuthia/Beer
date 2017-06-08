@@ -5,33 +5,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.alex.beer.R;
+import com.example.alex.beer.models.Beer;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity {
-    @Bind(R.id.passwordLoginButton)
-    Button mLogin;
-    @Bind(R.id.emailEditText)
-    EditText mEmail;
+public class BeersActivity extends AppCompatActivity {
 
+    @Bind(R.id.findLiquorsButton)
+    Button mLiquorsButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_beers);
         ButterKnife.bind(this);
-        mLogin.setOnClickListener(new View.OnClickListener() {
+        mLiquorsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, BeersActivity.class);
+                Intent intent = new Intent(BeersActivity.this, BeerListActivity.class);
                 startActivity(intent);
             }
         });
     }
 }
-
-
-

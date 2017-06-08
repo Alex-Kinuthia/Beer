@@ -6,43 +6,19 @@
     android:layout_height="match_parent"
     tools:context="com.example.alex.beer.ui.BeerListActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/imageView"
-        android:src="@drawable/back"
-        android:scaleType="centerCrop" />
-
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Liquors Available"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:textColor="@color/colorTextIcons"
-        android:textSize="40sp"
-        android:id="@+id/ListView"
-        android:textStyle="bold" />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Liquors available"
+    android:id="@+id/nameEditText"
+    android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/liquorEditText"
-        android:background="@color/colorTextIcons"
-        android:layout_above="@+id/findProductsButton"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp"
-        android:hint="Enter Liquor"
-        android:layout_centerHorizontal="true" />
+    <ListView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/listView"
+    android:layout_below="@+id/nameEditText"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find Liquor"
-        android:id="@+id/findProductsButton"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorTextIcons"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>
