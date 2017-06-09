@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="130dp"
         android:layout_height="100dp"
-        android:id="@+id/beerLabelTextView"
+        android:id="@+id/beerImageUrlTextView"
         android:src="@drawable/dem"
         android:scaleType="centerCrop"/>
 
@@ -55,9 +55,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="a"
+                android:text="abv"
                 android:id="@+id/beerAbvTextView"
-                android:textSize="25dp"
+                android:textSize="16dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/colorAccent"/>

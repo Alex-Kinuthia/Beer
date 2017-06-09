@@ -1,5 +1,7 @@
 package com.example.alex.beer.models;
 
+import org.parceler.Parcel;
+
 /**
  * Created by alex on 6/4/17.
  */
@@ -10,24 +12,24 @@ public class Beer {
     private String mAbv;
     private String mStyleId;
     private String mIsOrganic;
-    private String mStatus;
+//    private String mStatus;
     private String mDescription;
-    private String mLabel;
-    private String mCreateDate;
-    private String mUpdateDate;
+    private String mImageUrl = null;
+//    private String mCreateDate;
+//    private String mUpdateDate;
 
 
-    public Beer(String id, String name, String abv,String styleId, String isOrganic, String status, String description, String label, String createDate, String updateDate) {
+    public Beer(String id, String name, String abv,String styleId, String isOrganic, String description) {
        this.mId = id;
         this.mName = name;
-        this.mLabel = label;
         this.mAbv = abv;
         this.mStyleId = styleId;
         this.mIsOrganic = isOrganic;
-        this.mStatus = status;
+//        this.mStatus = status;
         this.mDescription = description;
-        this.mCreateDate = createDate;
-        this.mUpdateDate = updateDate;
+//        this.mCreateDate = createDate;
+
+//        this.mUpdateDate = updateDate;
     }
 
     public String getId() {
@@ -37,11 +39,6 @@ public class Beer {
     public String getName() {
         return mName;
     }
-
-    public String getLabel() {
-        return mLabel;
-    }
-
 
     public String getAbv() {
         return mAbv;
@@ -55,21 +52,29 @@ public class Beer {
         return mIsOrganic;
     }
 
-    public String getStatus(){
-        return mStatus;
+    public String getImageUrl() {
+        return mImageUrl;
     }
+
+    public void setImageUrl(String mImageUrl) {
+        this.mImageUrl = mImageUrl;
+    }
+
+    //    public String getStatus(){
+//        return mStatus;
+//    }
 
     public String getDescription() {
         return mDescription;
     }
 
-    public String getCreateDate() {
-        return mCreateDate;
-    }
-
-    public String getUpdateDate() {
-        return mUpdateDate;
-    }
+//    public String getCreateDate() {
+//        return mCreateDate;
+//    }
+//
+//    public String getUpdateDate() {
+//        return mUpdateDate;
+//    }
 
 }
 

@@ -10,49 +10,62 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/tei"
+        android:background="@drawable/back"
         android:scaleType="centerCrop"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true" />
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nitrik Liqur"
-        android:textColor="@color/colorTextIcons"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        android:id="@+id/textView"
-        app:layout_constraintRight_toLeftOf="@+id/imageView"
-        app:layout_constraintLeft_toRightOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintVertical_bias="0.077"
+        android:text="Beer"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp" />
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="133dp"
-        android:layout_height="51dp"
-        android:text="Login"
-        android:textColor="@color/colorPrimaryText"
-        tools:layout_editor_absoluteY="437dp"
-        android:layout_marginBottom="25dp"
-        android:layout_above="@+id/signUpButton"
-        android:layout_centerHorizontal="true" />
-    <Button
-        android:id="@+id/signUpButton"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:id="@+id/appNameTextView"/>
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/nameEditText"
+        android:background="@color/colorTextIcons"
+        android:layout_above="@+id/findLiquorsButton"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:hint="Enter Name"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find Liquors"
+        android:id="@+id/findLiquorsButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:visibility="visible"
+        android:layout_above="@+id/savedLiquorsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Saved Liquors"
+        android:id="@+id/savedLiquorsButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:visibility="visible"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="53dp"
-        android:layout_alignLeft="@+id/loginButton"
-        android:layout_alignStart="@+id/loginButton"
-        android:layout_alignRight="@+id/loginButton"
-        android:layout_alignEnd="@+id/loginButton" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
 </RelativeLayout>

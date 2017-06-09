@@ -39,6 +39,7 @@ public class BeerService {
 //                .build();
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BEER_BASE_URL).newBuilder();
+        urlBuilder.addQueryParameter(Constants.BEER_API_KEY_QUERY_PARAMETER, Constants.BEER_API_KEY);
         urlBuilder.addQueryParameter(Constants.BEER_QUERY_PARAMETER, name);
         String url = urlBuilder.build().toString();
 
@@ -60,18 +61,23 @@ public class BeerService {
                 JSONArray dataJSON = beerJSON.getJSONArray("data");
                 for (int i = 0; i < dataJSON.length(); i++) {
                     JSONObject brewaryJSON = dataJSON.getJSONObject(i);
-                    String id = brewaryJSON.getString("id");
-                    String name = brewaryJSON.getString("name");
-                    String description = brewaryJSON.getJSONObject("style").getString("description");
-                    String abv = brewaryJSON.getString("abv");
-                    String styleId = brewaryJSON.getString("styleId");
-                    String isOrganic = brewaryJSON.getString("isOrganic");
-                    String status = brewaryJSON.getString("status");
-                    String label = brewaryJSON.optJSONObject("labels").optString("large");
-                    String updateDate =brewaryJSON.optJSONObject("updateDate").toString();
-                    String createDate =brewaryJSON.optJSONObject("createDate").toString();
+                    String id = brewaryJSON.optString("id");
+                    String name = brewaryJSON.getJSONObject("style").optString("name");
+                    String description = brewaryJSON.getJSONObject("style").optString("description");
+                    String abv = brewaryJSON.optString("abv");
+                    String styleId = brewaryJSON.optString("styleId");
+                    String isOrganic = brewaryJSON.optString("isOrganic");
 
-                    Beer beer = new Beer(id, name, abv, styleId, isOrganic, status, description, label, createDate, updateDate);
+
+//                    String status = brewaryJSON.optString("status");
+//                    String imageUrl = brewaryJSON.optJSONObject("labels").optString("icon");
+//                    String updateDate =brewaryJSON.optJSONObject("updateDate").toString();
+//                    String createDate =brewaryJSON.optJSONObject("createDate").toString();
+
+                    Beer beer = new Beer(id, name, abv, styleId, isOrganic, description);
+//                    if (!imageUrl.isEmpty()){
+//                        beer.setImageUrl(imageUrl);
+//                    }
                     beers.add(beer);
                 }
             }
