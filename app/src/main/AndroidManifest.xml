@@ -24,6 +24,7 @@
         <activity android:name=".ui.CreateAccountActivity" />
         <activity android:name=".ui.SavedBeerListActivity" />
         <activity android:name=".ui.BeerListActivity" />
+        <activity android:name=".ui.BeerDetailActivity"></activity>
     </application>
 
 </manifest>
