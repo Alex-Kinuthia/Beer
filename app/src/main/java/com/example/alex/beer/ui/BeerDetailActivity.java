@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.alex.beer.R;
+import com.example.alex.beer.adapters.BeerPagerAdapter;
 import com.example.alex.beer.models.Beer;
 
 import org.parceler.Parcels;
