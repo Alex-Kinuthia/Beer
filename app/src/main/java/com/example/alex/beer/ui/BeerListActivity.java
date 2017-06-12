@@ -1,6 +1,8 @@
 package com.example.alex.beer.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.alex.beer.Constants;
 import com.example.alex.beer.R;
 import com.example.alex.beer.adapters.BeerListAdapter;
 import com.example.alex.beer.models.Beer;
@@ -24,6 +27,9 @@ import okhttp3.Response;
 
 public class BeerListActivity extends AppCompatActivity {
     public static final String TAG = BeerListActivity.class.getSimpleName();
+    private SharedPreferences mSharedPreferences;
+    private String mRecentName;
+
 
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -43,7 +49,15 @@ public class BeerListActivity extends AppCompatActivity {
         String name = intent.getStringExtra("name");
 
         getBeers(name);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentName = mSharedPreferences.getString(Constants.PREFERENCES_NAME_KEY, null);
+        if (mRecentName!= null) {
+            getBeers(mRecentName);
+        }
     }
+
+
 
     private void getBeers(String name) {
         final BeerService beerService = new BeerService();
