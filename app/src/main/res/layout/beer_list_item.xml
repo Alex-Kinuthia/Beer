@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Beer Id"
             android:id="@+id/beerIdTextView"
-            android:layout_below="@+id/restaurantNameTextView"
+            android:layout_below="@+id/beerNameTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textStyle="italic"/>
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Beer Style"
             android:id="@+id/beerStyleIdTextView"
-            android:layout_below="@+id/restaurantNameTextView"
+            android:layout_below="@+id/beerNameTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textStyle="italic"/>
