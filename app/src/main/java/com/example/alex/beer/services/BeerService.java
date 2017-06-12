@@ -65,6 +65,7 @@ public class BeerService {
                     String name = brewaryJSON.getJSONObject("style").optString("name");
                     String description = brewaryJSON.getJSONObject("style").optString("description");
                     String abv = brewaryJSON.optString("abv");
+                    String status = brewaryJSON.optString("status");
                     String styleId = brewaryJSON.optString("styleId");
                     String isOrganic = brewaryJSON.optString("isOrganic");
 
@@ -74,7 +75,7 @@ public class BeerService {
 //                    String updateDate =brewaryJSON.optJSONObject("updateDate").toString();
 //                    String createDate =brewaryJSON.optJSONObject("createDate").toString();
 
-                    Beer beer = new Beer(id, name, abv, styleId, isOrganic, description);
+                    Beer beer = new Beer(id, name, abv, styleId, isOrganic, status, description);
 //                    if (!imageUrl.isEmpty()){
 //                        beer.setImageUrl(imageUrl);
 //                    }

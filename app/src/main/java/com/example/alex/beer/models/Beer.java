@@ -12,20 +12,20 @@ public class Beer {
     private String mAbv;
     private String mStyleId;
     private String mIsOrganic;
-//    private String mStatus;
+    private String mStatus;
     private String mDescription;
     private String mImageUrl = null;
 //    private String mCreateDate;
 //    private String mUpdateDate;
 
 
-    public Beer(String id, String name, String abv,String styleId, String isOrganic, String description) {
+    public Beer(String id, String name, String abv,String styleId, String isOrganic, String description, String status) {
        this.mId = id;
         this.mName = name;
         this.mAbv = abv;
         this.mStyleId = styleId;
         this.mIsOrganic = isOrganic;
-//        this.mStatus = status;
+        this.mStatus = status;
         this.mDescription = description;
 //        this.mCreateDate = createDate;
 
@@ -60,13 +60,15 @@ public class Beer {
         this.mImageUrl = mImageUrl;
     }
 
-    //    public String getStatus(){
-//        return mStatus;
-//    }
+        public String getStatus(){
+        return mStatus;
+    }
 
     public String getDescription() {
         return mDescription;
     }
+
+
 
 //    public String getCreateDate() {
 //        return mCreateDate;

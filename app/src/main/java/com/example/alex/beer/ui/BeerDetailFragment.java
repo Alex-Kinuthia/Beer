@@ -22,10 +22,12 @@ import butterknife.ButterKnife;
 public class BeerDetailFragment extends Fragment {
     @Bind(R.id.beerImageUrlTextView) ImageView mImageUrlLabel;
     @Bind(R.id.beerNameTextView) TextView mNameLabel;
-    @Bind(R.id.cuisineTextView) TextView mStyleIdLabel;
+    @Bind(R.id.beerStyleIdTextView) TextView mStyleIdLabel;
     @Bind(R.id.beerAbvTextView) TextView mAbvLabel;
-    @Bind(R.id.beerCreateDateTextView) TextView mCreateDateLabel;
-    @Bind(R.id.beerUpdateDateTextView) TextView mUpdateDateLabel;
+    @Bind(R.id.beerStatusTextView) TextView mStatusLabel;
+    @Bind(R.id.beerDescriptionTextView) TextView mDescriptionLabel;
+
+
     @Bind(R.id.saveBeerButton) TextView msaveBeerButton;
 
     private Beer mBeer;
@@ -54,6 +56,9 @@ public class BeerDetailFragment extends Fragment {
         mNameLabel.setText(mBeer.getName());
         mStyleIdLabel.setText(mBeer.getStyleId());
         mAbvLabel.setText(mBeer.getAbv());
+        mStatusLabel.setText(mBeer.getStatus());
+        mDescriptionLabel.setText(mBeer.getDescription());
+
 //        mCreateDateLabel.setText(mBeer.getCreateDate());
 //        mUpdateDateLabel.setText(mBeer.getUpdateDate());
 //        msaveBeerButton.setText(mBeer.getBeerButton());

@@ -1,7 +1,9 @@
 package com.example.alex.beer.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,9 @@ import android.widget.TextView;
 
 import com.example.alex.beer.R;
 import com.example.alex.beer.models.Beer;
+import com.example.alex.beer.ui.BeerDetailActivity;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -45,7 +50,7 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
         return mBeers.size();
     }
 
-    public class BeerViewHolder extends RecyclerView.ViewHolder {
+    public class BeerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @Bind(R.id.beerIdTextView) TextView mIdTextView;
         @Bind(R.id.beerNameTextView) TextView mNameTextView;
         @Bind(R.id.beerAbvTextView) TextView mAbvTextView;
@@ -57,6 +62,7 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
         public void bindBeer(Beer beer) {
             mIdTextView.setText(beer.getId());
@@ -64,8 +70,16 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
             mAbvTextView.setText(beer.getAbv());
             mStyleIdTextView.setText(beer.getStyleId());
 
+        }
 
-
+        @Override
+        public void onClick(View v) {
+            Log.d("click listener", "working!");
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, BeerDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("beers", Parcels.wrap(mBeers));
+            mContext.startActivity(intent);
         }
     }
 }

@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:text="Our Originator We mill the choicest two row barley malt in our 100 year old mill room for this all natural, unfiltered Lager. Lightly hopped, fermented slowly. River Horse Lager gets plenty of quality time with us before we pass it on to you"
                     android:drawablePadding="4dp"
-                    android:id="@+id/addressTextView"
+                    android:id="@+id/beerDescriptionTextView"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="17sp"
                     android:textStyle="bold"
