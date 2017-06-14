@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beer"
+        android:text="JUA KINYWAJI"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
@@ -30,18 +30,6 @@
         android:textSize="50sp"
         android:textStyle="bold"
         android:id="@+id/appNameTextView"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameEditText"
-        android:background="@color/colorTextIcons"
-        android:layout_above="@+id/findLiquorsButton"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp"
-        android:hint="Enter Name"
-        android:layout_centerHorizontal="true" />
-
 
     <Button
         android:layout_width="match_parent"

@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SharedPreferences.Editor mEditor;
 
     @Bind(R.id.findLiquorsButton) Button mfindLiquorsButton;
-    @Bind(R.id.nameEditText) EditText mNameEditText;
     @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    @Bind(R.id.savedLiquorsButton) Button mSavedLiquorsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,28 +34,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrich-regular.ttf");
         mAppNameTextView.setTypeface(ostrichFont);
-
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mEditor = mSharedPreferences.edit();
-
         mfindLiquorsButton.setOnClickListener(this);
+        mSavedLiquorsButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+
         if(v == mfindLiquorsButton) {
-            String name = mNameEditText.getText().toString();
-//            if(!(name).equals("")) {
-//                addToSharedPreferences(name);
-//            }
             Intent intent = new Intent(MainActivity.this, BeerListActivity.class);
-            intent.putExtra("name", name);
             startActivity(intent);
         }
-    }
 
-    private void addToSharedPreferences(String name) {
-        mEditor.putString(Constants.PREFERENCES_NAME_KEY, name).apply();
+        if (v == mSavedLiquorsButton) {
+            Intent intent = new Intent(MainActivity.this, SavedBeerListActivity.class);
+            startActivity(intent);
+        }
+
     }
 }
 

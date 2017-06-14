@@ -7,9 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.alex.beer.Constants;
 import com.example.alex.beer.R;
 import com.example.alex.beer.models.Beer;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 
@@ -25,8 +31,6 @@ public class BeerDetailFragment extends Fragment {
     @Bind(R.id.beerTypeTextView) TextView mTypeLabel;
     @Bind(R.id.beerIsAlcoholicTextView) TextView mIsAlcoholicLabel;
     @Bind(R.id.beerDescriptionTextView) TextView mDescriptionLabel;
-
-
     @Bind(R.id.saveBeerButton) TextView msaveBeerButton;
 
     private Beer mBeer;
@@ -60,7 +64,9 @@ public class BeerDetailFragment extends Fragment {
 
 
 
-
         return view;
     }
+
+
+
     }

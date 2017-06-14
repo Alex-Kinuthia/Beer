@@ -31,7 +31,8 @@ public class BeerDetailActivity extends AppCompatActivity {
 
         mBeers = Parcels.unwrap(getIntent().getParcelableExtra("beers"));
 
-        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+//        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+        int startingPosition = getIntent().getIntExtra("position", 0);
 
         adapterViewPager = new BeerPagerAdapter(getSupportFragmentManager(), mBeers);
         mViewPager.setAdapter(adapterViewPager);
