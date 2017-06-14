@@ -13,12 +13,9 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:id="@+id/restaurantImageView"
-            android:src="@drawable/tei"
-            android:scaleType="centerCrop" />
+
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,8 +29,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4.5/5"
-                android:id="@+id/beerAbvTextView"
+                android:text="red-wine"
+                android:id="@+id/beerIdTextView"
                 android:layout_alignTop="@+id/beerNameTextView"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
@@ -43,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="American-Style Premium Lager"
+                android:text="Red Wine"
                 android:id="@+id/beerNameTextView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -70,11 +67,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="97"
-                    android:id="@+id/beerStyleIdTextView"
+                    android:text="true"
+                    android:id="@+id/beerIsAlcoholicTextView"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"/>
@@ -82,8 +79,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verified"
-                    android:id="@+id/beerStatusTextView"
+                    android:text="spirits-other"
+                    android:id="@+id/beerTypeTextView"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
@@ -96,7 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Our Originator We mill the choicest two row barley malt in our 100 year old mill room for this all natural, unfiltered Lager. Lightly hopped, fermented slowly. River Horse Lager gets plenty of quality time with us before we pass it on to you"
+                    android:text="The difference between white and red wine is the color of the grape, and the red is made from blue grapes. As a mixer, red wine occur mostly in punches and such. It's good to keep a bottle in the bar (but beware of keeping open bottles too long – you'll have vinegar.)."
                     android:drawablePadding="4dp"
                     android:id="@+id/beerDescriptionTextView"
                     android:textColor="@color/colorTextIcons"

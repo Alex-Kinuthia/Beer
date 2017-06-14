@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == mfindLiquorsButton) {
             String name = mNameEditText.getText().toString();
-            if(!(name).equals("")) {
-                addToSharedPreferences(name);
-            }
+//            if(!(name).equals("")) {
+//                addToSharedPreferences(name);
+//            }
             Intent intent = new Intent(MainActivity.this, BeerListActivity.class);
             intent.putExtra("name", name);
             startActivity(intent);
@@ -58,3 +58,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEditor.putString(Constants.PREFERENCES_NAME_KEY, name).apply();
     }
 }
+

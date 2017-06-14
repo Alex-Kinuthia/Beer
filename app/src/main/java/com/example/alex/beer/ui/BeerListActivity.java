@@ -31,11 +31,8 @@ public class BeerListActivity extends AppCompatActivity {
     private String mRecentName;
 
 
-    @Bind(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private BeerListAdapter mAdapter;
-
-
 
     public ArrayList<Beer> mBeers = new ArrayList<>();
 
@@ -50,11 +47,11 @@ public class BeerListActivity extends AppCompatActivity {
 
         getBeers(name);
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentName = mSharedPreferences.getString(Constants.PREFERENCES_NAME_KEY, null);
-        if (mRecentName!= null) {
-            getBeers(mRecentName);
-        }
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentName = mSharedPreferences.getString(Constants.PREFERENCES_NAME_KEY, null);
+//        if (mRecentName!= null) {
+//            getBeers(mRecentName);
+//        }
     }
 
 
@@ -83,8 +80,6 @@ public class BeerListActivity extends AppCompatActivity {
                                 new LinearLayoutManager(BeerListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
-
-
                     }
                 });
             }

@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.example.alex.beer.R;
 import com.example.alex.beer.models.Beer;
 import com.example.alex.beer.ui.BeerDetailActivity;
+import com.example.alex.beer.ui.BeerDetailFragment;
+import com.example.alex.beer.ui.BeerListActivity;
 
 import org.parceler.Parcels;
 
@@ -51,10 +53,10 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
     }
 
     public class BeerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @Bind(R.id.beerIdTextView) TextView mIdTextView;
         @Bind(R.id.beerNameTextView) TextView mNameTextView;
-        @Bind(R.id.beerAbvTextView) TextView mAbvTextView;
-        @Bind(R.id.beerStyleIdTextView) TextView mStyleIdTextView;
+        @Bind(R.id.beerIdTextView) TextView mIdTextView;
+        @Bind(R.id.beerTypeTextView) TextView mTypeTextView;
+
 
         private Context mContext;
 
@@ -65,16 +67,15 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
             itemView.setOnClickListener(this);
         }
         public void bindBeer(Beer beer) {
-            mIdTextView.setText(beer.getId());
+
             mNameTextView.setText(beer.getName());
-            mAbvTextView.setText(beer.getAbv());
-            mStyleIdTextView.setText(beer.getStyleId());
+            mIdTextView.setText(beer.getId());
+            mTypeTextView.setText(beer.getType());
 
         }
 
         @Override
         public void onClick(View v) {
-            Log.d("click listener", "working!");
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, BeerDetailActivity.class);
             intent.putExtra("position", itemPosition);

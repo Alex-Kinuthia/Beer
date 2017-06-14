@@ -2,66 +2,65 @@ package com.example.alex.beer.models;
 
 import org.parceler.Parcel;
 
+import java.util.ArrayList;
+
+@Parcel
 /**
  * Created by alex on 6/4/17.
  */
-
 public class Beer {
-    private String mId;
     private String mName;
-    private String mAbv;
-    private String mStyleId;
-    private String mIsOrganic;
-    private String mStatus;
+    private String mId;
+    private String mType;
+    private String mIsJuicy;
+    private String mIsBaseSpirit;
+    private String mIsAlcoholic;
+    private String mIsCarbonated;
     private String mDescription;
-    private String mImageUrl = null;
+
 //    private String mCreateDate;
 //    private String mUpdateDate;
-
-
-    public Beer(String id, String name, String abv,String styleId, String isOrganic, String description, String status) {
-       this.mId = id;
+    public Beer(){}
+    public Beer(String name, String id, String type, String isJuicy, String isBaseSpirit, String isCarbonated,String isAlcoholic,  String description) {
         this.mName = name;
-        this.mAbv = abv;
-        this.mStyleId = styleId;
-        this.mIsOrganic = isOrganic;
-        this.mStatus = status;
+        this.mId = id;
+        this.mType = type;
+        this.mIsJuicy = isJuicy;
+        this.mIsBaseSpirit = isBaseSpirit;
+        this.mIsCarbonated = isCarbonated;
+        this.mIsAlcoholic = isAlcoholic;
         this.mDescription = description;
-//        this.mCreateDate = createDate;
+    }
 
-//        this.mUpdateDate = updateDate;
+
+    public String getName() {
+        return mName;
     }
 
     public String getId() {
         return mId;
     }
 
-    public String getName() {
-        return mName;
+    public String getType() {
+        return mType;
     }
 
-    public String getAbv() {
-        return mAbv;
+    public String getIsJuicy() {
+        return mIsJuicy;
     }
 
-    public String getStyleId() {
-        return mStyleId;
+    public String getIsBaseSpirit() {
+        return mIsBaseSpirit;
     }
 
-    public String getIsOrganic() {
-        return mIsOrganic;
+
+
+    public String getIsCarbonated() {
+        return mIsCarbonated;
     }
 
-    public String getImageUrl() {
-        return mImageUrl;
-    }
-
-    public void setImageUrl(String mImageUrl) {
-        this.mImageUrl = mImageUrl;
-    }
-
-        public String getStatus(){
-        return mStatus;
+    public String getIsAlcoholic() {
+        return mIsAlcoholic;
     }
 
     public String getDescription() {
@@ -69,14 +68,6 @@ public class Beer {
     }
 
 
-
-//    public String getCreateDate() {
-//        return mCreateDate;
-//    }
-//
-//    public String getUpdateDate() {
-//        return mUpdateDate;
-//    }
 
 }
 

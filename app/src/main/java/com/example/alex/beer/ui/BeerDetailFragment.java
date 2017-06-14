@@ -20,11 +20,10 @@ import butterknife.ButterKnife;
 
 
 public class BeerDetailFragment extends Fragment {
-    @Bind(R.id.beerImageUrlTextView) ImageView mImageUrlLabel;
     @Bind(R.id.beerNameTextView) TextView mNameLabel;
-    @Bind(R.id.beerStyleIdTextView) TextView mStyleIdLabel;
-    @Bind(R.id.beerAbvTextView) TextView mAbvLabel;
-    @Bind(R.id.beerStatusTextView) TextView mStatusLabel;
+    @Bind(R.id.beerIdTextView) TextView mIdLabel;
+    @Bind(R.id.beerTypeTextView) TextView mTypeLabel;
+    @Bind(R.id.beerIsAlcoholicTextView) TextView mIsAlcoholicLabel;
     @Bind(R.id.beerDescriptionTextView) TextView mDescriptionLabel;
 
 
@@ -54,14 +53,11 @@ public class BeerDetailFragment extends Fragment {
 //        Picasso.with(view.getContext()).load(mBeer.getImageUrl()).into(mImageUrlLabel);
 
         mNameLabel.setText(mBeer.getName());
-        mStyleIdLabel.setText(mBeer.getStyleId());
-        mAbvLabel.setText(mBeer.getAbv());
-        mStatusLabel.setText(mBeer.getStatus());
+        mIdLabel.setText(mBeer.getId());
+        mTypeLabel.setText(mBeer.getType());
+        mIsAlcoholicLabel.setText(mBeer.getIsAlcoholic());
         mDescriptionLabel.setText(mBeer.getDescription());
 
-//        mCreateDateLabel.setText(mBeer.getCreateDate());
-//        mUpdateDateLabel.setText(mBeer.getUpdateDate());
-//        msaveBeerButton.setText(mBeer.getBeerButton());
 
 
 
