@@ -31,7 +31,7 @@
                 android:layout_alignTop="@+id/beerNameTextView"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryText"
                 android:textStyle="bold" />
 
             <TextView
@@ -64,7 +64,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="true"
+                    android:text="Alcoholic: true"
                     android:id="@+id/beerIsAlcoholicTextView"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="spirits-other"
+                    android:text="Type: spirits-other"
                     android:id="@+id/beerTypeTextView"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"

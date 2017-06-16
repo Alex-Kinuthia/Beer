@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 
 
 
-public class BeerDetailFragment extends Fragment {
+public class BeerDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.beerNameTextView) TextView mNameLabel;
     @Bind(R.id.beerIdTextView) TextView mIdLabel;
     @Bind(R.id.beerTypeTextView) TextView mTypeLabel;
@@ -63,10 +63,20 @@ public class BeerDetailFragment extends Fragment {
         mDescriptionLabel.setText(mBeer.getDescription());
 
 
+        msaveBeerButton.setOnClickListener(this);
+
 
         return view;
     }
 
-
-
+    @Override
+    public void onClick(View v) {
+        if (v == msaveBeerButton) {
+            DatabaseReference beerRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_BEERS);
+            beerRef.push().setValue(mBeer);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
+    }
     }

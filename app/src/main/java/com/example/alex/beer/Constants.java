@@ -10,4 +10,5 @@ public class Constants {
     public static final String BEER_QUERY_PARAMETER = "name";
     public static final String BEER_API_KEY_QUERY_PARAMETER ="apiKey";
     public static final String PREFERENCES_NAME_KEY = "name";
+    public static final String FIREBASE_CHILD_BEERS = "beers";
 }
