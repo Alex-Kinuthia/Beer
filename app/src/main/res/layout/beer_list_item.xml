@@ -2,58 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:weightSum="1">
 
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:id="@+id/wineImageView"
+        android:scaleType="centerCrop"/>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="10dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/beerNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@color/colorPrimary"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="Drink Name"
-            android:textColor="@color/colorPrimary"/>
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/varietalTextView"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:text="red-wine"
-            android:id="@+id/beerIdTextView"
-            android:layout_below="@+id/beerNameTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"/>
+            android:layout_weight="0.03"
+            android:text=""
+            android:textStyle="italic" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="spirits-other"
-            android:id="@+id/beerTypeTextView"
-            android:layout_below="@+id/beerNameTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="50"
-                android:id="@+id/beerRatingTextView"
-                android:textSize="16dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/colorAccent"/>
-        </RelativeLayout>
     </LinearLayout>
+
 </LinearLayout>

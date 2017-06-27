@@ -9,65 +9,69 @@ import java.util.ArrayList;
  * Created by alex on 6/4/17.
  */
 public class Beer {
-    private String mName;
-    private String mId;
-    private String mType;
-    private String mIsJuicy;
-    private String mIsBaseSpirit;
-    private String mIsAlcoholic;
-    private String mIsCarbonated;
-    private String mDescription;
+    private  String name;
+    private String winery;
+    private String varietal;
+    private String price;
+    private String vintage;
+    private String type;
+    private String link;
+    private String region;
+    private String image;
 
-//    private String mCreateDate;
+
+
+    //    private String mCreateDate;
 //    private String mUpdateDate;
     public Beer(){}
-    public Beer(String name, String id, String type, String isJuicy, String isBaseSpirit, String isCarbonated,String isAlcoholic,  String description) {
-        this.mName = name;
-        this.mId = id;
-        this.mType = type;
-        this.mIsJuicy = isJuicy;
-        this.mIsBaseSpirit = isBaseSpirit;
-        this.mIsCarbonated = isCarbonated;
-        this.mIsAlcoholic = isAlcoholic;
-        this.mDescription = description;
+    public Beer(String name, String winery, String varietal, String price, String vintage, String type, String link, String region, String image) {
+        this.name = name;
+        this.winery = winery;
+        this.varietal = varietal;
+        this.price = price;
+        this.vintage = vintage;
+        this.type = type;
+        this.link = link;
+        this.region = region;
+        this.image = image;
     }
+
+
 
 
     public String getName() {
-        return mName;
+        return name;
     }
 
-    public String getId() {
-        return mId;
+    public String getWinery() {
+        return winery;
+    }
+
+    public String getVarietal() {
+        return varietal;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getVintage() {
+        return vintage;
     }
 
     public String getType() {
-        return mType;
+        return type;
     }
 
-    public String getIsJuicy() {
-        return mIsJuicy;
+    public String getLink() {
+        return link;
     }
 
-    public String getIsBaseSpirit() {
-        return mIsBaseSpirit;
+    public String getRegion() {
+        return region;
     }
 
-
-
-    public String getIsCarbonated() {
-        return mIsCarbonated;
+    public String getImage() {
+        return image;
     }
-
-    public String getIsAlcoholic() {
-        return mIsAlcoholic;
-    }
-
-    public String getDescription() {
-        return mDescription;
-    }
-
-
-
 }
-

@@ -25,54 +25,42 @@ import okhttp3.Response;
 
 public class BeerService {
     private static OkHttpClient client = new OkHttpClient();
-    public static void findBeers(String name, Callback callback){
-
-
-//        OkHttpOAuthConsumer consumer = new OkHttpOAuthConsumer(Constants.BEER_API_KEY);
-//
+    public static void findBeers(String name, Callback callback) {
 //        OkHttpClient client = new OkHttpClient.Builder()
-//                .addInterceptor(new SigningInterceptor(consumer))
 //                .build();
-
-
-//        OkHttpClient client = new OkHttpClient.Builder()
-//                .addInterceptor(new SigningInterceptor(consumer))
-//                .build();
-        String base_url = String.format("%s/quicksearch/ingredients/%s/", Constants.BEER_BASE_URL, name);
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(base_url).newBuilder();
-//        urlBuilder.addQueryParameter(Constants.BEER_QUERY_PARAMETER, name);
-        urlBuilder.addQueryParameter(Constants.BEER_API_KEY_QUERY_PARAMETER, Constants.BEER_API_KEY);
-//        String url = urlBuilder.build().toString() + name + Constants.BEER_API_KEY_QUERY_PARAMETER
-//                + Constants.BEER_API_KEY;
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BASE_URL).newBuilder();
+        urlBuilder.addQueryParameter(Constants.API_KEY_QUERY_PARAMETER, Constants.BEER_API_KEY);
+        urlBuilder.addQueryParameter(Constants.NAME_QUERY_PARAMETER, name);
+        urlBuilder.addQueryParameter("format", "json");
         String url = urlBuilder.build().toString();
-        Request request= new Request.Builder()
+        Request request = new Request.Builder()
                 .url(url)
                 .build();
-
         Call call = client.newCall(request);
         call.enqueue(callback);
     }
 
-
-    public ArrayList<Beer> processResults(Response response) {
+    public static ArrayList<Beer> processResults(Response response) {
         ArrayList<Beer> beers = new ArrayList<>();
 
         try {
             String jsonData = response.body().string();
             if (response.isSuccessful()) {
                 JSONObject beerJSON = new JSONObject(jsonData);
-                JSONArray dataJSON = beerJSON.getJSONArray("result");
+                JSONArray dataJSON = beerJSON.getJSONArray("wines");
                 for (int i = 0; i < dataJSON.length(); i++) {
                     JSONObject brewaryJSON = dataJSON.getJSONObject(i);
                     String name = brewaryJSON.optString("name");
-                    String id = brewaryJSON.optString("id");
-                    String type = brewaryJSON.optString("type");
-                    String isJuicy = brewaryJSON.optString("isJuicy");
-                    String isBaseSpirit = brewaryJSON.optString("isBaseSpirit");
-                    String isAlcoholic = brewaryJSON.optString("isAlcoholic");
-                    String isCarbonated = brewaryJSON.optString("isCarbonated");
-                    String description = brewaryJSON.optString("description");
-                    Beer beer = new Beer( name, id, type, isJuicy , isBaseSpirit, isAlcoholic, isCarbonated, description);
+                    String winery = brewaryJSON.getString("winery");
+                    String varietal = brewaryJSON.getString("varietal");
+                    String price = brewaryJSON.getString("price");
+                    String vintage = brewaryJSON.getString("vintage");
+                    String type = brewaryJSON.getString("type");
+                    String link = brewaryJSON.getString("link");
+                    String region = brewaryJSON.getString("region");
+                    String image = brewaryJSON.getString("image");
+
+                    Beer beer = new Beer( name, winery, varietal, price, vintage, type, link, region, image);
                     beers.add(beer);
 //                    if (!imageUrl.isEmpty()){
 //                        beer.setImageUrl(imageUrl);

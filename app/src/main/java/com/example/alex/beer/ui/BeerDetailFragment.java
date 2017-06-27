@@ -26,11 +26,16 @@ import butterknife.ButterKnife;
 
 
 public class BeerDetailFragment extends Fragment implements View.OnClickListener {
-    @Bind(R.id.beerNameTextView) TextView mNameLabel;
-    @Bind(R.id.beerIdTextView) TextView mIdLabel;
-    @Bind(R.id.beerTypeTextView) TextView mTypeLabel;
-    @Bind(R.id.beerIsAlcoholicTextView) TextView mIsAlcoholicLabel;
-    @Bind(R.id.beerDescriptionTextView) TextView mDescriptionLabel;
+    private static final int MAX_WIDTH = 400;
+    private static final int MAX_HEIGHT = 300;
+    @Bind(R.id.beernameTextView) TextView mnameLabel;
+    @Bind(R.id.beerwineryTextView) TextView mwineryLabel;
+    @Bind(R.id.beervarietalTextView) TextView mvarietalLabel;
+    @Bind(R.id.beerpriceTextView) TextView mpriceLabel;
+    @Bind(R.id.beervintageTextView) TextView mvintageLabel;
+    @Bind(R.id.beerImageView) TextView mimageLabel;
+    @Bind(R.id.beerlinkTextView) TextView mlinkLabel;
+
     @Bind(R.id.saveBeerButton) TextView msaveBeerButton;
 
     private Beer mBeer;
@@ -56,11 +61,13 @@ public class BeerDetailFragment extends Fragment implements View.OnClickListener
 
 //        Picasso.with(view.getContext()).load(mBeer.getImageUrl()).into(mImageUrlLabel);
 
-        mNameLabel.setText(mBeer.getName());
-        mIdLabel.setText(mBeer.getId());
-        mTypeLabel.setText(mBeer.getType());
-        mIsAlcoholicLabel.setText(mBeer.getIsAlcoholic());
-        mDescriptionLabel.setText(mBeer.getDescription());
+        mnameLabel.setText(mBeer.getName());
+       mwineryLabel.setText(mBeer.getWinery());
+        mvarietalLabel.setText(mBeer.getVarietal());
+        mpriceLabel.setText(mBeer.getPrice());
+        mvintageLabel.setText(mBeer.getVintage());
+        mimageLabel.setText(mBeer.getImage());
+        mlinkLabel.setText(mBeer.getLink());
 
 
         msaveBeerButton.setOnClickListener(this);

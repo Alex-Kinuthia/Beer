@@ -15,6 +15,7 @@ import com.example.alex.beer.models.Beer;
 import com.example.alex.beer.ui.BeerDetailActivity;
 import com.example.alex.beer.ui.BeerDetailFragment;
 import com.example.alex.beer.ui.BeerListActivity;
+import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -27,8 +28,12 @@ import butterknife.ButterKnife;
  * Created by alex on 6/9/17.
  */
 public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerViewHolder> {
+    private static final int MAX_WIDTH = 500;
+    private static final int MAX_HEIGHT = 200;
     private ArrayList<Beer> mBeers = new ArrayList<>();
     private Context mContext;
+
+
 
     public BeerListAdapter(Context context, ArrayList<Beer> beers) {
         mContext = context;
@@ -36,7 +41,7 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
     }
 
     @Override
-    public BeerListAdapter.BeerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BeerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.beer_list_item, parent, false);
         BeerViewHolder viewHolder = new BeerViewHolder(view);
         return viewHolder;
@@ -52,11 +57,10 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
         return mBeers.size();
     }
 
-    public class BeerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @Bind(R.id.beerNameTextView) TextView mNameTextView;
-        @Bind(R.id.beerIdTextView) TextView mIdTextView;
-        @Bind(R.id.beerTypeTextView) TextView mTypeTextView;
-
+    public class BeerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        @Bind(R.id.beerImageView)    ImageView mBeerImageView;
+        @Bind(R.id.beerNameTextView) TextView mBeerNameTextView;
+        @Bind(R.id.varietalTextView) TextView mVarietalTextView;
 
         private Context mContext;
 
@@ -65,13 +69,6 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
-        }
-        public void bindBeer(Beer beer) {
-
-            mNameTextView.setText(beer.getName());
-            mIdTextView.setText(beer.getId());
-            mTypeTextView.setText(beer.getType());
-
         }
 
         @Override
@@ -82,5 +79,17 @@ public class BeerListAdapter extends RecyclerView.Adapter<BeerListAdapter.BeerVi
             intent.putExtra("beers", Parcels.wrap(mBeers));
             mContext.startActivity(intent);
         }
+
+
+        public void bindBeer(Beer beer) {
+            Picasso.with(mContext)
+                    .load(beer.getImage())
+                    .resize(MAX_WIDTH, MAX_HEIGHT)
+                    .centerCrop()
+                    .into(mBeerImageView);
+            mBeerNameTextView.setText(beer.getName());
+            mVarietalTextView.setText(beer.getVarietal());
+        }
+
     }
 }

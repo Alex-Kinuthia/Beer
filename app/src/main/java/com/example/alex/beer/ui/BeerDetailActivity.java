@@ -30,10 +30,7 @@ public class BeerDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mBeers = Parcels.unwrap(getIntent().getParcelableExtra("beers"));
-
-//        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
         int startingPosition = getIntent().getIntExtra("position", 0);
-
         adapterViewPager = new BeerPagerAdapter(getSupportFragmentManager(), mBeers);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);

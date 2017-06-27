@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.alex.beer.ui.BeerDetailFragment">
@@ -11,8 +9,22 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"/>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="171dp"
+            android:id="@+id/beerImageView"
+            android:src="@drawable/tei"
+            android:scaleType="centerCrop"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -26,9 +38,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="red-wine"
-                android:id="@+id/beerIdTextView"
-                android:layout_alignTop="@+id/beerNameTextView"
+                android:text="2008"
+                android:id="@+id/beervintageTextView"
+                android:layout_alignTop="@+id/beernameTextView"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:textColor="@color/colorPrimaryText"
@@ -37,12 +49,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Red Wine"
-                android:id="@+id/beerNameTextView"
+                android:text="Drink Name"
+                android:id="@+id/beernameTextView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:textSize="20sp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="George Moraitis"
+                android:id="@+id/beerwineryTextView"
+                android:layout_below="@+id/beernameTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="italic" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -58,27 +83,40 @@
                 android:layout_alignParentStart="true"
                 android:layout_above="@+id/saveBeerButton"
                 android:paddingLeft="30dp"
-                android:paddingTop="20dp"
+                android:paddingTop="30dp"
                 android:paddingRight="30dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alcoholic: true"
-                    android:id="@+id/beerIsAlcoholicTextView"
-                    android:drawablePadding="4dp"
+                    android:text="9.00"
+                    android:id="@+id/beerpriceTextView"
                     android:textColor="@color/colorTextIcons"
-                    android:textSize="17sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center"/>
+                    android:gravity="center" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Type: spirits-other"
-                    android:id="@+id/beerTypeTextView"
-                    android:drawablePadding="4dp"
+                    android:text="Monemvasia (50%); Mandilaria (50%)"
+                    android:id="@+id/beervarietalTextView"
+                    android:textColor="@color/colorTextIcons"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View on More"
+                    android:id="@+id/beerlinkTextView"
+                    android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
+                    android:drawablePadding="5dp"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -87,24 +125,13 @@
 
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="The difference between white and red wine is the color of the grape, and the red is made from blue grapes. As a mixer, red wine occur mostly in punches and such. It's good to keep a bottle in the bar (but beware of keeping open bottles too long – you'll have vinegar.)."
-                    android:drawablePadding="4dp"
-                    android:id="@+id/beerDescriptionTextView"
-                    android:textColor="@color/colorTextIcons"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"/>
 
             </LinearLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Liquor"
+                android:text="Save Drink"
                 android:id="@+id/saveBeerButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"

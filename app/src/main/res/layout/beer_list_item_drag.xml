@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/beerIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/beerNameTextView"
+            android:text="Red-wine"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20dp"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/beerTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/beerNameTextView"
+            android:text="spirits-other"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/beerTyeTextView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/beerNameTextView"
+            android:drawableLeft="@drawable/ic_reorder_black_24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!--<ImageView-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:id="@+id/beerImageView"-->
+            <!--android:src="@drawable/download"-->
+            <!--android:scaleType="centerCrop"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/dragIcon"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_alignLeft="@id/beerImageView"-->
+            <!--android:layout_alignBottom="@id/beerImageView"-->
+            <!--android:gravity="bottom|left"-->
+            <!--android:src="@drawable/ic_reorder_black_24dp"/>-->
+
+    </RelativeLayout>
+
+</LinearLayout>
